@@ -1,10 +1,22 @@
 package org.launchcode.models;
 
 public class User {
+    private int id;
+    private static int nextId;
     private String username;
     private String email;
     private String password;
     private String verifyPassword;
+
+
+    public User (String username, String email, String password){
+        this.username= username;
+        this.email = email;
+        this.password = password;
+        this.id = nextId;
+        nextId++;
+
+    }
 
     public String getUsername() {
         return username;
@@ -32,6 +44,10 @@ public class User {
 
     public String getVerifyPassword() {
         return verifyPassword;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setVerifyPassword(String verifyPassword) {
