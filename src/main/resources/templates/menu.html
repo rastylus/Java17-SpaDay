@@ -41,8 +41,13 @@
         <p th:replace="~{fragments :: pedicureDescription}"></p>
     </div>
 </div>
-<div class="footer">
-
-</div>
+<footer>
+    <div>Ask about our nail polish colors.</div>
+    <div id="polish-collection">
+        <th:block th:each="option : ${polishChoices}">
+            <div classs="polish-sample" th:style="'background: ' + ${option}"></div>
+        </th:block>
+    </div>
+</footer>
 </body>
 </html>

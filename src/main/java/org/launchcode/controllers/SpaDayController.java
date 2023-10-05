@@ -68,6 +68,15 @@ public class SpaDayController {
         model.addAttribute("manipedi", manipedi);
         model.addAttribute("facials", appropriateFacials);
 
+        ArrayList<String> polishChoices = new ArrayList<>();
+        polishChoices.add("#ed553e");
+        polishChoices.add("#ed3e4d");
+        polishChoices.add("#d12c71");
+        polishChoices.add("#a31787");
+        polishChoices.add("#34a39e");
+        polishChoices.add("#63c295");
+
+        model.addAttribute("polishChoices", polishChoices);
 
         return "menu";
     }
