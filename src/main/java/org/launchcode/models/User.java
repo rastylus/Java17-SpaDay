@@ -1,19 +1,23 @@
 package org.launchcode.models;
 
+import java.time.LocalDate;
+
 public class User {
-    private int id;
     private static int nextId;
+    private final int id;
     private String username;
     private String email;
     private String password;
     private String verifyPassword;
+    private final LocalDate dateRegistered;
 
 
     public User (String username, String email, String password){
+        this.id = nextId;
         this.username= username;
         this.email = email;
         this.password = password;
-        this.id = nextId;
+        this.dateRegistered = LocalDate.now();
         nextId++;
 
     }
@@ -53,4 +57,9 @@ public class User {
     public void setVerifyPassword(String verifyPassword) {
         this.verifyPassword = verifyPassword;
     }
+
+    public LocalDate getDateRegistered() {
+        return dateRegistered;
+    }
+
 }
