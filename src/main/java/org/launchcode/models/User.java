@@ -5,17 +5,21 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class User {
+
     @NotBlank(message = "Must enter username.")
     @Size(min = 5, max = 15, message = "Username must be between 5 and 15 characters.")
     private String username;
+
     @Email(message = "Not a valid email.")
     private String email;
+
     @NotBlank(message = "Must enter password.")
     @Size(min =6, message = "Password must be at least 6 characters long.")
     private String password;
 
-    public User() {
+//    private String verifyPassword;
 
+    public User() {
     }
 
     public User(String username, String email, String password) {
@@ -24,6 +28,14 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+
+
+//    private void checkPassword() {
+//        if()
+//            verifyPassword = null;
+//    }
+
 
     public String getUsername() {
         return username;
@@ -48,5 +60,13 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+//    public String getVerifyPassword() {
+//        return verifyPassword;
+//    }
+//
+//    public void setVerifyPassword(String verifyPassword) {
+//        this.verifyPassword = verifyPassword;
+//    }
 }
 
